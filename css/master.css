@@ -1,0 +1,54 @@
+html{
+  scroll-behavior  : smooth;
+}
+body {
+  background-image : url('../img/cork-board.png');
+}
+
+form {
+  background-image : url('../img/tree_bark.png');
+  font-family      : 'VT323',
+                     monospace;
+  font-size        : 1.2rem;
+}
+
+h5 {
+  font-family       : 'Handlee',
+                      cursive !important;
+}
+
+button,
+input {
+  font-size         : 1.5rem !important;
+}
+
+legend {
+  font-size         : 1.9rem !important;
+}
+
+.aprobado {
+  background-image  : linear-gradient(
+                         to bottom,
+                         rgba(0, 255, 0, 0.1),
+                         rgba(0, 255, 0, 0.1)
+                       ),
+                       url(
+                         '../img/cork-board.png'
+                       );
+}
+
+.suspenso {
+  background-image  : linear-gradient(
+                       to bottom,
+                       rgba(255, 0, 0, 0.15),
+                       rgba(255, 0, 0, 0.15)
+                     ),
+                     url(
+                       '../img/cork-board.png'
+                     );
+}
+
+.progress-bar {
+  background-color   : silver !important;
+  color              : #325d8800 !important;
+}

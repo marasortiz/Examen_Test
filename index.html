@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Examen</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+  <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body class="">
+  <div class="container mt-5">
+    <form id="examen" name="examen" method="post" action="data.php" class="border border-primary rounded-lg bg-grey p-3">
+      <h5 class="text-center">
+        Completa las siguientes preguntas de examen. Tienes 10 minutos para completarlo. Podrás ver el tiempo consumido y restante en la barra de abajo. <div id="date"></div>
+      </h5>
+      <fieldset id="datos" class="border border-secondary p-1 fondo shadow">
+        <legend id="legend_datos" class="w-auto">Datos personales</legend>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-4">
+              <label for="nombre">NOMBRE</label>
+              <input type="text" name="nombre" id="nombre" value="" class="form-control">
+            </div>
+            <div class="col-lg-4">
+              <label for="apellidos">APELLIDOS</label>
+              <input type="text" name="apellidos" id="apellidos" value="" class="form-control">
+            </div>
+            <div class="col-lg-4">
+              <label for="dni">DNI</label>
+              <input type="text" name="dni" id="dni" maxlength="9" size="9" class="form-control" onblur="nif(value)">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset id="preguntas" class="border border-secondary p-1 fondo shadow">
+        <legend id="legend_preguntas" class="w-auto">Preguntas</legend>
+        <div class="form-group">
+          <fieldset id="html" class="border border-secondary p-2 m-3 bg-white shadow">
+            <legend id="legend_html" class="w-auto">HTML5 <i class="fab fa-html5"></i></legend>
+            <label for="t1">1. ¿Qué significa HTML?</label>
+            <select id="t1" name="t1" class="form-control">
+              <option value="0" selected="selected">...</option>
+              <option value="1">Home Tool Markup Language</option>
+              <option value="2">Hyper Text Markup Language</option>
+              <option value="3">Hyperlinks and Text Markup Language</option>
+            </select>
+            <label for="t1">2. ¿Cuál es el elemento de HTML para insertar un salto de línea? (sin &lt >) </label>
+            <input type="text" name="t2" id="t2" value="" class="form-control">
+            <label for="t3">3. ¿Cuál de los siguientes enlaces abre la url en una nueva pestaña del navegador?</label>
+            <select id="t3" name="t3" class="form-control">
+              <option value="0" selected="selected">...</option>
+              <option value="1"> &lta href="url" target="_blank">  </option>
+              <option value="2"> &lta href="url" target="new"> </option>
+              <option value="3"> &lta href="url" new> </option>
+            </select>
+          </fieldset>
+          <br>
+          <fieldset id="css" class="border border-secondary p-2 m-3 bg-white shadow">
+            <legend id="legend_css" class="w-auto">CSS3 <i class="fab fa-css3-alt"></i></legend>
+            <label for="t4">4. ¿Qué significa CSS?</label>
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t4a" name="t4" class="custom-control-input" value="Computer Style Sheets">
+                <label class="custom-control-label" for="t4a">Computer Style Sheets</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t4b" name="t4" class="custom-control-input" value="Creative Style Sheets">
+                <label class="custom-control-label" for="t4b">Creative Style Sheets</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t4c" name="t4" class="custom-control-input" value="Colorful Style Sheets">
+                <label class="custom-control-label" for="t4c">Colorful Style Sheets</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t4d" name="t4" class="custom-control-input" value="Cascading Style Sheets">
+                <label class="custom-control-label" for="t4d">Cascading Style Sheets</label>
+              </div>
+            </div>
+            <label for="t5">5. ¿Cómo se inserta un comentario en CSS?</label>
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t5a" name="t5" class="custom-control-input" value="/* */">
+                <label class="custom-control-label" for="t5a">/* esto es un comentario */ </label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t5b" name="t5" class="custom-control-input" value='"'>
+                <label class="custom-control-label" for="t5b">" esto es un comentario " </label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t5c" name="t5" class="custom-control-input" value="// //">
+                <label class="custom-control-label" for="t5c">// esto es un comentario //</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t5d" name="t5" class="custom-control-input" value="//">
+                <label class="custom-control-label" for="t5d">// esto es un comentario</label>
+              </div>
+            </div>
+            <label for="t6">6. ¿Cómo mostrarias un borde con las siguientes caracteristicas en CSS?</label>
+            <button type="button" class="btn btn-secondary ml-2 mb-1" data-toggle="tooltip" data-placement="right" title="Arriba 10px, Abajo 5px, Izquierda 20px, Derecha 1px." data-original-title="">Caracteristicas del borde</button>
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t6a" name="t6" class="custom-control-input" value="10, 1, 5, 20">
+                <label class="custom-control-label" for="t6a">border-width:10px 1px 5px 20px;</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t6b" name="t6" class="custom-control-input" value='10, 20, 5, 1'>
+                <label class="custom-control-label" for="t6b">border-width:10px 20px 5px 1px;</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t6c" name="t6" class="custom-control-input" value="10, 5, 20, 1">
+                <label class="custom-control-label" for="t6c">border-width:10px 5px 20px 1px;</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t6d" name="t6" class="custom-control-input" value="5, 20, 10, 1">
+                <label class="custom-control-label" for="t6d">border-width:5px 20px 10px 1px;</label>
+              </div>
+            </div>
+          </fieldset>
+          <br>
+          <fieldset id="js" class="border border-secondary p-2 m-3 bg-white shadow">
+            <legend id="legend_js" class="w-auto">JavaScript <i class="fab fa-js"></i></legend>
+            <label for="t7">7. ¿Cómo se puede usar JavaScript en un documento HTML? </label>
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t7a" name="t7" class="custom-control-input" value=".js">
+                <label class="custom-control-label" for="t7a">Incorporando un archivo externo ".js"</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t7b" name="t7" class="custom-control-input" value='&ltscript&rt'>
+                <label class="custom-control-label" for="t7b">En el documento HTML agregando &ltscript> </label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t7c" name="t7" class="custom-control-input" value="&ltscript&rt & .js">
+                <label class="custom-control-label" for="t7c">Las dos anteriores</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t7d" name="t7" class="custom-control-input" value="ninguna">
+                <label class="custom-control-label" for="t7d">Ninguna respuesta es correcta</label>
+              </div>
+            </div>
+            <label for="t8">8. ¿Cómo mostrarías un mensaje con JavaScript con una ventana emergente?</label>
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t8a" name="t8" class="custom-control-input" value="console.log">
+                <label class="custom-control-label" for="t8a">console.log("Hola Mundo");</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t8b" name="t8" class="custom-control-input" value='alert'>
+                <label class="custom-control-label" for="t8b">alert("Hola Mundo");</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t8c" name="t8" class="custom-control-input" value="prompt">
+                <label class="custom-control-label" for="t8c">prompt("Hola Mundo");</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t8d" name="t8" class="custom-control-input" value="ninguna">
+                <label class="custom-control-label" for="t8d">Ninguna respuesta es correcta</label>
+              </div>
+            </div>
+            <label for="t9">9. ¿Cómo creas una función en JavaScript?</label>
+            <div class="form-group">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t9a" name="t9" class="custom-control-input" value="function">
+                <label class="custom-control-label" for="t9a">function = miFuncion(){} </label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t9b" name="t9" class="custom-control-input" value='funtion'>
+                <label class="custom-control-label" for="t9b">funtion = miFuncion(){}</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="t9c" name="t9" class="custom-control-input" value="funcion">
+                <label class="custom-control-label" for="t9c">funcion = miFuncion(){}</label>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset id="crab" class="border border-secondary p-2 m-3 bg-white shadow">
+            <legend id="legend_crab" class="w-auto">Usabilidad y Accesibilidad <i class="fa fa-desktop"></i></legend>
+            <label for="t10">10. ¿Qué significa C.R.A.P. y para qué se usa? </label>
+            <textarea name="t10" id="t10" value="" rows="7" cols="50" class="form-control"></textarea>
+          </fieldset>
+        </div>
+      </fieldset>
+
+      <fieldset id="botones" class="border border-secondary p-1 mt-3 fondo shadow">
+        <div class="progress my-3">
+          <div class="progress-bar progress-bar-striped active" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+        </div>
+        <div class="text-center">
+          <div class="form-group">
+            <div class="custom-control custom-switch ml-2">
+              <input type="checkbox" class="custom-control-input" name="check" id="check">
+              <label class="custom-control-label" for="check">Haz click aquí para poder enviar el examen</label>
+            </div>
+          </div>
+          <input type="submit" value="Enviar Datos" id="boton_enviar" name="boton_enviar" class="btn btn-secondary btn-lg" onclick="validar(this.form);return false">
+          <button type="reset" name="button" class="btn btn-secondary btn-lg" onclick="ocultar()">Borrar datos</button>
+        </div>
+        <div id="nota" class="row mt-2" style="display: none;">
+          <div class="col-lg-1">
+            <legend>Nota:</legend>
+          </div>
+          <div class="col-lg-11">
+            <input type="text" id="nota" name="nota" value="" class="form-control" disabled="disabled">
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <script src="https://kit.fontawesome.com/2b3baa9509.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="js/examen.js" type="text/javascript"></script>
+  <script src="js/bar.js" type="text/javascript"></script>
+  <script src="js/beep.js" type="text/javascript"></script>
+</body>
+
+</html>
